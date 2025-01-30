@@ -1,0 +1,72 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Suscripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        input, select, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body> 
+    <audio id="backgroundMusic" src="bensound-buddy.mp3" loop autoplay></audio>
+    <div class="container">
+        <h2>Suscríbete</h2>
+        <form id="subscriptionForm">
+            <input type="text" id="cedula" placeholder="Cédula" required>
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellido" placeholder="Apellido" required>
+            <input type="text" id="direccion" placeholder="Dirección" required>
+            <input type="tel" id="telefono" placeholder="Teléfono" required>
+            <select id="sexo" required>
+                <option value="">Seleccione su sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+            <input type="email" id="correo" placeholder="Correo Electrónico" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+    </div>
+   
+    <audio id="submitSound">
+        <source src="button-click.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Formulario enviado correctamente");
+        });
+    </script>
+</body>
+</html>
